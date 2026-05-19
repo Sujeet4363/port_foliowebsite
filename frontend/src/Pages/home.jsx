@@ -1,6 +1,6 @@
 import profileImg from "../assets/sujeet.jpeg";
 import { motion } from "framer-motion";
-import Skills from "../components/Skills";
+import Skills from "../components/skills.jsx";
 
 export default function Home() {
   return (
