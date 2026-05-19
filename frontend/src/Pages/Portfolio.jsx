@@ -1,37 +1,86 @@
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+
+const projects = [
+  {
+    title: "Docker Monitoring Stack",
+    description:
+      "Monitoring system using Prometheus, Grafana and Docker Compose.",
+    tech: "Docker • Grafana • Prometheus",
+    github: "https://github.com/Sujeet4363",
+    live: "#",
+  },
+
+  {
+    title: "Jenkins CI/CD Pipeline",
+    description:
+      "Automated CI/CD pipeline for deployment and testing.",
+    tech: "Jenkins • Linux • GitHub",
+    github: "https://github.com/Sujeet4363",
+    live: "#",
+  },
+
+  {
+    title: "MongoDB Sharding",
+    description:
+      "Distributed MongoDB cluster implementation with sharding.",
+    tech: "MongoDB • Linux",
+    github: "https://github.com/Sujeet4363",
+    live: "#",
+  },
+];
+
 export default function Portfolio() {
   return (
-    <div className="text-center mt-20">
+    <section className="text-white py-20 px-6">
 
-      <h1 className="text-4xl font-bold">My Projects 💼</h1>
+      <h1 className="text-5xl font-bold text-center mb-16">
+        My Projects 🚀
+      </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-        {/* CARD 1 */}
-        <div className="bg-gray-800 p-5 rounded-lg">
-          <h2 className="text-xl font-bold">Project 1</h2>
-          <p className="text-gray-400 mt-2">
-            Dummy project description (will update later)
-          </p>
-        </div>
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-800 rounded-2xl p-8 hover:scale-105 transition duration-300 shadow-lg"
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              {project.title}
+            </h2>
 
-        {/* CARD 2 */}
-        <div className="bg-gray-800 p-5 rounded-lg">
-          <h2 className="text-xl font-bold">Project 2</h2>
-          <p className="text-gray-400 mt-2">
-            Dummy project description (future project)
-          </p>
-        </div>
+            <p className="text-gray-300 mb-4">
+              {project.description}
+            </p>
 
-        {/* CARD 3 */}
-        <div className="bg-gray-800 p-5 rounded-lg">
-          <h2 className="text-xl font-bold">Project 3</h2>
-          <p className="text-gray-400 mt-2">
-            Placeholder project card
-          </p>
-        </div>
+            <p className="text-blue-400 mb-6">
+              {project.tech}
+            </p>
+
+            <div className="flex gap-4">
+
+              <a
+                href={project.github}
+                target="_blank"
+                className="bg-gray-700 hover:bg-gray-600 px-5 py-2 rounded-lg flex items-center gap-2"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+
+              <a
+                href={project.live}
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-600 px-5 py-2 rounded-lg flex items-center gap-2"
+              >
+                <FaExternalLinkAlt />
+                Live Demo
+              </a>
+
+            </div>
+          </div>
+        ))}
 
       </div>
-
-    </div>
-  )
+    </section>
+  );
 }

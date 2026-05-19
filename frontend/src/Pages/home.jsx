@@ -1,25 +1,48 @@
+import profileImg from "../assets/sujeet.jpeg";
+import { motion } from "framer-motion";
+import Skills from "../components/Skills";
+
 export default function Home() {
   return (
     <div className="text-center mt-20">
 
       <img
-        src="https://i.pravatar.cc/150?img=12"
-        className="rounded-full w-40 h-40 mx-auto border-4 border-blue-500"
-      />
+  src={profileImg}
+  alt="Sujeet"
+  className="w-48 h-48 rounded-full object-cover border-4 border-blue-500 mx-auto mb-8"
+/>
 
-      <h1 className="text-5xl font-bold mt-6">Sujeet Singh</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-6xl font-bold mt-6"
+      >
+        Hello, I'm Sujeet 👋
+      </motion.h1>
 
-      <p className="text-gray-400 mt-4">
-        Full Stack Developer | React | Python | PostgreSQL
-      </p>
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+        className="text-gray-300 text-xl mt-6"
+      >
+        Full Stack Developer • DevOps Engineer • React Developer
+      </motion.p>
 
       {/* BIO */}
       <div className="mt-10 bg-gray-800 p-6 rounded-lg w-2/3 mx-auto">
-        <h2 className="text-xl font-bold mb-2">About Me</h2>
+        <h2 className="text-xl font-bold mb-2">
+          About Me
+        </h2>
+
         <p className="text-gray-300">
           I am a passionate developer who builds scalable web applications using modern technologies like React and FastAPI.
         </p>
       </div>
+
+      {/* SKILLS */}
+      <Skills />
 
       {/* RESUME BUTTON */}
       <div className="mt-8">
@@ -33,5 +56,5 @@ export default function Home() {
       </div>
 
     </div>
-  )
+  );
 }
