@@ -8,14 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://port-foliowebsite-rnvj-23e9wx7km-sujeet4363s-projects.vercel.app"
-  ],
-  methods: ["GET", "POST"],
-  credentials: true,
-}));
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
