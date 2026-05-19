@@ -13,7 +13,7 @@ export default function Admin() {
 
   useEffect(() => {
 
-    fetch("http://localhost:5000/api/messages")
+    fetch("https://port-foliowebsite.onrender.com/api/messages")
       .then((res) => res.json())
       .then((data) => setMessages(data));
 
